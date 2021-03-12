@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping"
+	domainID="com.ibm.msl.mapping.xml"
+	domainIDExtension="zosconnect"
+	targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/POST"
+	version="8.0.5.0"
+	xmlns:map="http://www.ibm.com/zosConnect/2.0/mapping/POST"
+	jsonWrapped="false"
+	 
+	>
+
+	<inlinedXMLSchema targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/input/POST"><![CDATA[
+
+	<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/input/POST" xmlns:tns="http://www.ibm.com/zosConnect/2.0/mapping/JSON/input/POST">
+  <xsd:element name="IIT_CLAS_SRV_V1_AplicationEntryOperationResponse" type="tns:IIT_CLAS_SRV_V1_AplicationEntryOperationResponse"/>
+  <xsd:complexType name="IIT_CLAS_SRV_V1_AplicationEntryOperationResponse">
+    <xsd:sequence>
+      <xsd:element name="APANCOMM" type="tns:APANCOMM"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="APANCOMM">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="NCWM0300" type="tns:NCWM0300"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="NCWM0300">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="MIR_MAP_INTERFACE" type="tns:MIR_MAP_INTERFACE"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MIR_MAP_INTERFACE">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="MIR_LENGTH">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="-9999"/>
+            <xsd:maxInclusive value="9999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MTPI_PARMS" type="tns:MTPI_PARMS"/>
+      <xsd:element minOccurs="0" name="MIR_SCREEN_1" type="tns:MIR_SCREEN_1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MTPI_PARMS">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="MTPI_CURSOR_POS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="-9999"/>
+            <xsd:maxInclusive value="9999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MTPI_PROGRAM_ID">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MTPI_APPL_ID">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MTPI_COMPANY_CODE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MTPI_PROCESS_DATE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MTPI_EDIT_LANG">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MIR_SCREEN_1">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="MIR_SCREEN_1_FIELDS" type="tns:MIR_SCREEN_1_FIELDS"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MIR_SCREEN_1_FIELDS">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="MIR_TRNID">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MIR_CMD">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="64"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MIR_POLNO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MIR_POLSF">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MIR_MENAE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MIR_ISLOC">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MIR_CRLOC">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MIR_AGENT">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="6"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
+
+	]]></inlinedXMLSchema>
+
+	<inlinedXMLSchema targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/output/POST"><![CDATA[
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/output/POST"
+      xmlns:body="http://www.ibm.com/zosConnect/2.0/mapping/JSON/input/POST"
+      xmlns:tns="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/output/POST">
+
+      <xsd:import namespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/input/POST" schemaLocation="../schema_0.xsd"/>
+
+      <xsd:element name="HTTPResponse" type="tns:HTTPResponseType"/>
+
+      <xsd:complexType name="HTTPResponseType">
+        <xsd:sequence>
+          <xsd:element name="Headers" type="tns:HeadersType"/>
+          <xsd:element name="Body" type="tns:BodyType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="HeadersType">
+        <xsd:sequence>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="BodyType">
+        <xsd:sequence>
+          <xsd:element ref="body:IIT_CLAS_SRV_V1_AplicationEntryOperationResponse"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+
+	]]></inlinedXMLSchema>
+
+    <input inlinedXMLSchema="true" path="../schema_0.xsd" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/input/POST" var="rootInput"/>
+    <output inlinedXMLSchema="true" path="../schema_1.xsd" targetNamespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/output/POST" var="rootOutput"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="in" uri="http://www.ibm.com/zosConnect/2.0/mapping/JSON/input/POST"/>
+        <namespace kind="supplement" prefix="out" uri="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/output/POST"/>
+    </namespaces>
+    <mappingDeclaration name="POST.CreateNewPolicy">
+        <input namespace="http://www.ibm.com/zosConnect/2.0/mapping/JSON/input/POST" path="$rootInput/IIT_CLAS_SRV_V1_AplicationEntryOperationResponse"/>
+        <output namespace="http://www.ibm.com/zosConnect/2.0/mapping/HTTP/output/POST" path="$rootOutput/HTTPResponse"/>
+        <passthrough>
+            <input path="."/>
+            <output path="Body/IIT_CLAS_SRV_V1_AplicationEntryOperationResponse"/>
+            <updates>
+            </updates>
+        </passthrough>
+    </mappingDeclaration>
+
+</mappingRoot>

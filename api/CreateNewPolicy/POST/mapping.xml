@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ZosConnectServiceMapping xmlns:ns2="http://www.ibm.com/zosConnect/2.0/zosConnectServiceMapping" mappingSpecVersion="1.0">
+    <mappingContext basePath="/iit/clas_/api_/v1/applicationentry" relativePath="/CreateNewPolicy" method="POST" serviceName="IIT_CLAS_SRV_V1_AplicationEntry" defaultResponseCode="200"/>
+    <requestMessage>
+        <mappingRootModel type="MSL" location="api/CreateNewPolicy/POST/request.map"/>
+    </requestMessage>
+    <responseMessages code="200" description="OK">
+        <mappingRootModel type="MSL" location="api/CreateNewPolicy/POST/response.map"/>
+    </responseMessages>
+</ns2:ZosConnectServiceMapping>

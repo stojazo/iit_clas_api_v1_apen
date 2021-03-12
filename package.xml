@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zosConnectApi xmlns="http://www.ibm.com/zosConnect/2.0/zosConnectApi" id="IIT_CLAS_API_V1_AplicationEntry">
+    <apiSpec title="IIT_CLAS_API_V1_AplicationEntry" basePath="/iit/clas_/api_/v1/applicationentry" description="The Application Entry API will be called to creates new policy numbers, inquire about, maintain, or delete pending policies." version="1.0.0">
+        <path relativePath="/CreateNewPolicy">
+            <method type="POST" zosConnectServiceRef="IIT_CLAS_SRV_V1_AplicationEntry" httpXformFile="api/CreateNewPolicy/POST/mapping.xml" operationId="postIIT_CLAS_SRV_V1_AplicationEntry"/>
+        </path>
+        <path relativePath="/MaintainPolicy/{CO},{PolID}">
+            <method type="GET" zosConnectServiceRef="IIT_CLAS_SRV_V1_AplicationEntry" httpXformFile="api/MaintainPolicy/{CO},{PolID}/GET/mapping.xml" operationId="getIIT_CLAS_SRV_V1_AplicationEntry"/>
+            <method type="POST" zosConnectServiceRef="IIT_CLAS_SRV_V1_AplicationEntry" httpXformFile="api/MaintainPolicy/{CO},{PolID}/POST/mapping.xml" operationId="postIIT_CLAS_SRV_V1_AplicationEntry1"/>
+        </path>
+        <path relativePath="/DeletePolicy/{CO},{PolID}">
+            <method type="DELETE" zosConnectServiceRef="IIT_CLAS_SRV_V1_AplicationEntry" httpXformFile="api/DeletePolicy/{CO},{PolID}/DELETE/mapping.xml" operationId="deleteIIT_CLAS_SRV_V1_AplicationEntry"/>
+        </path>
+        <apiDoc docType="SWAGGER">api-docs/swagger.json</apiDoc>
+    </apiSpec>
+</zosConnectApi>

@@ -1,0 +1,966 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "The Application Entry API will be called to creates new policy numbers, inquire about, maintain, or delete pending policies.",
+    "version" : "1.0.0",
+    "title" : "IIT_CLAS_API_V1_AplicationEntry"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/iit/clas_/api_/v1/applicationentry",
+  "schemes" : [ "https", "http" ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/CreateNewPolicy" : {
+      "post" : {
+        "tags" : [ "IIT_CLAS_API_V1_AplicationEntry" ],
+        "operationId" : "postIIT_CLAS_SRV_V1_AplicationEntry",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "postIIT_CLAS_SRV_V1_AplicationEntry_request",
+          "description" : "request body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/postIIT_CLAS_SRV_V1_AplicationEntry_request"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/postIIT_CLAS_SRV_V1_AplicationEntry_response_200"
+            }
+          }
+        }
+      }
+    },
+    "/DeletePolicy/{CO},{PolID}" : {
+      "delete" : {
+        "tags" : [ "IIT_CLAS_API_V1_AplicationEntry" ],
+        "operationId" : "deleteIIT_CLAS_SRV_V1_AplicationEntry",
+        "parameters" : [ {
+          "name" : "CO",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "PolID",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "deleteIIT_CLAS_SRV_V1_AplicationEntry_request",
+          "description" : "request body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/deleteIIT_CLAS_SRV_V1_AplicationEntry_request"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/deleteIIT_CLAS_SRV_V1_AplicationEntry_response_200"
+            }
+          }
+        }
+      }
+    },
+    "/MaintainPolicy/{CO},{PolID}" : {
+      "get" : {
+        "tags" : [ "IIT_CLAS_API_V1_AplicationEntry" ],
+        "operationId" : "getIIT_CLAS_SRV_V1_AplicationEntry",
+        "parameters" : [ {
+          "name" : "CO",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "PolID",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "getIIT_CLAS_SRV_V1_AplicationEntry_request",
+          "description" : "request body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/getIIT_CLAS_SRV_V1_AplicationEntry_request"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/getIIT_CLAS_SRV_V1_AplicationEntry_response_200"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "IIT_CLAS_API_V1_AplicationEntry" ],
+        "operationId" : "postIIT_CLAS_SRV_V1_AplicationEntry1",
+        "parameters" : [ {
+          "name" : "CO",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "PolID",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "postIIT_CLAS_SRV_V1_AplicationEntry1_request",
+          "description" : "request body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/postIIT_CLAS_SRV_V1_AplicationEntry1_request"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/postIIT_CLAS_SRV_V1_AplicationEntry1_response_200"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "postIIT_CLAS_SRV_V1_AplicationEntry_request" : {
+      "type" : "object",
+      "properties" : {
+        "IIT_CLAS_SRV_V1_AplicationEntryOperation" : {
+          "type" : "object",
+          "properties" : {
+            "APANCOMM" : {
+              "type" : "object",
+              "properties" : {
+                "NCWM0300" : {
+                  "type" : "object",
+                  "properties" : {
+                    "MIR_MAP_INTERFACE" : {
+                      "type" : "object",
+                      "properties" : {
+                        "MIR_LENGTH" : {
+                          "type" : "integer",
+                          "minimum" : -9999,
+                          "maximum" : 9999
+                        },
+                        "MTPI_PARMS" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MTPI_CURSOR_POS" : {
+                              "type" : "integer",
+                              "minimum" : -9999,
+                              "maximum" : 9999
+                            },
+                            "MTPI_PROGRAM_ID" : {
+                              "type" : "string",
+                              "maxLength" : 8
+                            },
+                            "MTPI_APPL_ID" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_COMPANY_CODE" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_PROCESS_DATE" : {
+                              "type" : "string",
+                              "maxLength" : 10
+                            },
+                            "MTPI_EDIT_LANG" : {
+                              "type" : "string",
+                              "maxLength" : 1
+                            }
+                          }
+                        },
+                        "MIR_SCREEN_1" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MIR_SCREEN_1_FIELDS" : {
+                              "type" : "object",
+                              "properties" : {
+                                "MIR_TRNID" : {
+                                  "type" : "string",
+                                  "maxLength" : 4
+                                },
+                                "MIR_CMD" : {
+                                  "type" : "string",
+                                  "maxLength" : 64
+                                },
+                                "MIR_POLNO" : {
+                                  "type" : "string",
+                                  "maxLength" : 9
+                                },
+                                "MIR_POLSF" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_MENAE" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_ISLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_CRLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_AGENT" : {
+                                  "type" : "string",
+                                  "maxLength" : 6
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "APANCOMM" ]
+        }
+      }
+    },
+    "postIIT_CLAS_SRV_V1_AplicationEntry_response_200" : {
+      "type" : "object",
+      "properties" : {
+        "IIT_CLAS_SRV_V1_AplicationEntryOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "APANCOMM" : {
+              "type" : "object",
+              "properties" : {
+                "NCWM0300" : {
+                  "type" : "object",
+                  "properties" : {
+                    "MIR_MAP_INTERFACE" : {
+                      "type" : "object",
+                      "properties" : {
+                        "MIR_LENGTH" : {
+                          "type" : "integer",
+                          "minimum" : -9999,
+                          "maximum" : 9999
+                        },
+                        "MTPI_PARMS" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MTPI_CURSOR_POS" : {
+                              "type" : "integer",
+                              "minimum" : -9999,
+                              "maximum" : 9999
+                            },
+                            "MTPI_PROGRAM_ID" : {
+                              "type" : "string",
+                              "maxLength" : 8
+                            },
+                            "MTPI_APPL_ID" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_COMPANY_CODE" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_PROCESS_DATE" : {
+                              "type" : "string",
+                              "maxLength" : 10
+                            },
+                            "MTPI_EDIT_LANG" : {
+                              "type" : "string",
+                              "maxLength" : 1
+                            }
+                          }
+                        },
+                        "MIR_SCREEN_1" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MIR_SCREEN_1_FIELDS" : {
+                              "type" : "object",
+                              "properties" : {
+                                "MIR_TRNID" : {
+                                  "type" : "string",
+                                  "maxLength" : 4
+                                },
+                                "MIR_CMD" : {
+                                  "type" : "string",
+                                  "maxLength" : 64
+                                },
+                                "MIR_POLNO" : {
+                                  "type" : "string",
+                                  "maxLength" : 9
+                                },
+                                "MIR_POLSF" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_MENAE" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_ISLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_CRLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_AGENT" : {
+                                  "type" : "string",
+                                  "maxLength" : 6
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "APANCOMM" ]
+        }
+      }
+    },
+    "getIIT_CLAS_SRV_V1_AplicationEntry_request" : {
+      "type" : "object",
+      "properties" : {
+        "IIT_CLAS_SRV_V1_AplicationEntryOperation" : {
+          "type" : "object",
+          "properties" : {
+            "APANCOMM" : {
+              "type" : "object",
+              "properties" : {
+                "NCWM0300" : {
+                  "type" : "object",
+                  "properties" : {
+                    "MIR_MAP_INTERFACE" : {
+                      "type" : "object",
+                      "properties" : {
+                        "MIR_LENGTH" : {
+                          "type" : "integer",
+                          "minimum" : -9999,
+                          "maximum" : 9999
+                        },
+                        "MTPI_PARMS" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MTPI_CURSOR_POS" : {
+                              "type" : "integer",
+                              "minimum" : -9999,
+                              "maximum" : 9999
+                            },
+                            "MTPI_PROGRAM_ID" : {
+                              "type" : "string",
+                              "maxLength" : 8
+                            },
+                            "MTPI_APPL_ID" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_COMPANY_CODE" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_PROCESS_DATE" : {
+                              "type" : "string",
+                              "maxLength" : 10
+                            },
+                            "MTPI_EDIT_LANG" : {
+                              "type" : "string",
+                              "maxLength" : 1
+                            }
+                          }
+                        },
+                        "MIR_SCREEN_1" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MIR_SCREEN_1_FIELDS" : {
+                              "type" : "object",
+                              "properties" : {
+                                "MIR_TRNID" : {
+                                  "type" : "string",
+                                  "maxLength" : 4
+                                },
+                                "MIR_CMD" : {
+                                  "type" : "string",
+                                  "maxLength" : 64
+                                },
+                                "MIR_POLNO" : {
+                                  "type" : "string",
+                                  "maxLength" : 9
+                                },
+                                "MIR_POLSF" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_MENAE" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_ISLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_CRLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_AGENT" : {
+                                  "type" : "string",
+                                  "maxLength" : 6
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "APANCOMM" ]
+        }
+      }
+    },
+    "getIIT_CLAS_SRV_V1_AplicationEntry_response_200" : {
+      "type" : "object",
+      "properties" : {
+        "IIT_CLAS_SRV_V1_AplicationEntryOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "APANCOMM" : {
+              "type" : "object",
+              "properties" : {
+                "NCWM0300" : {
+                  "type" : "object",
+                  "properties" : {
+                    "MIR_MAP_INTERFACE" : {
+                      "type" : "object",
+                      "properties" : {
+                        "MIR_LENGTH" : {
+                          "type" : "integer",
+                          "minimum" : -9999,
+                          "maximum" : 9999
+                        },
+                        "MTPI_PARMS" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MTPI_CURSOR_POS" : {
+                              "type" : "integer",
+                              "minimum" : -9999,
+                              "maximum" : 9999
+                            },
+                            "MTPI_PROGRAM_ID" : {
+                              "type" : "string",
+                              "maxLength" : 8
+                            },
+                            "MTPI_APPL_ID" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_COMPANY_CODE" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_PROCESS_DATE" : {
+                              "type" : "string",
+                              "maxLength" : 10
+                            },
+                            "MTPI_EDIT_LANG" : {
+                              "type" : "string",
+                              "maxLength" : 1
+                            }
+                          }
+                        },
+                        "MIR_SCREEN_1" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MIR_SCREEN_1_FIELDS" : {
+                              "type" : "object",
+                              "properties" : {
+                                "MIR_TRNID" : {
+                                  "type" : "string",
+                                  "maxLength" : 4
+                                },
+                                "MIR_CMD" : {
+                                  "type" : "string",
+                                  "maxLength" : 64
+                                },
+                                "MIR_POLNO" : {
+                                  "type" : "string",
+                                  "maxLength" : 9
+                                },
+                                "MIR_POLSF" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_MENAE" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_ISLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_CRLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_AGENT" : {
+                                  "type" : "string",
+                                  "maxLength" : 6
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "APANCOMM" ]
+        }
+      }
+    },
+    "postIIT_CLAS_SRV_V1_AplicationEntry1_request" : {
+      "type" : "object",
+      "properties" : {
+        "IIT_CLAS_SRV_V1_AplicationEntryOperation" : {
+          "type" : "object",
+          "properties" : {
+            "APANCOMM" : {
+              "type" : "object",
+              "properties" : {
+                "NCWM0300" : {
+                  "type" : "object",
+                  "properties" : {
+                    "MIR_MAP_INTERFACE" : {
+                      "type" : "object",
+                      "properties" : {
+                        "MIR_LENGTH" : {
+                          "type" : "integer",
+                          "minimum" : -9999,
+                          "maximum" : 9999
+                        },
+                        "MTPI_PARMS" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MTPI_CURSOR_POS" : {
+                              "type" : "integer",
+                              "minimum" : -9999,
+                              "maximum" : 9999
+                            },
+                            "MTPI_PROGRAM_ID" : {
+                              "type" : "string",
+                              "maxLength" : 8
+                            },
+                            "MTPI_APPL_ID" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_COMPANY_CODE" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_PROCESS_DATE" : {
+                              "type" : "string",
+                              "maxLength" : 10
+                            },
+                            "MTPI_EDIT_LANG" : {
+                              "type" : "string",
+                              "maxLength" : 1
+                            }
+                          }
+                        },
+                        "MIR_SCREEN_1" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MIR_SCREEN_1_FIELDS" : {
+                              "type" : "object",
+                              "properties" : {
+                                "MIR_TRNID" : {
+                                  "type" : "string",
+                                  "maxLength" : 4
+                                },
+                                "MIR_CMD" : {
+                                  "type" : "string",
+                                  "maxLength" : 64
+                                },
+                                "MIR_POLNO" : {
+                                  "type" : "string",
+                                  "maxLength" : 9
+                                },
+                                "MIR_POLSF" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_MENAE" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_ISLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_CRLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_AGENT" : {
+                                  "type" : "string",
+                                  "maxLength" : 6
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "APANCOMM" ]
+        }
+      }
+    },
+    "postIIT_CLAS_SRV_V1_AplicationEntry1_response_200" : {
+      "type" : "object",
+      "properties" : {
+        "IIT_CLAS_SRV_V1_AplicationEntryOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "APANCOMM" : {
+              "type" : "object",
+              "properties" : {
+                "NCWM0300" : {
+                  "type" : "object",
+                  "properties" : {
+                    "MIR_MAP_INTERFACE" : {
+                      "type" : "object",
+                      "properties" : {
+                        "MIR_LENGTH" : {
+                          "type" : "integer",
+                          "minimum" : -9999,
+                          "maximum" : 9999
+                        },
+                        "MTPI_PARMS" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MTPI_CURSOR_POS" : {
+                              "type" : "integer",
+                              "minimum" : -9999,
+                              "maximum" : 9999
+                            },
+                            "MTPI_PROGRAM_ID" : {
+                              "type" : "string",
+                              "maxLength" : 8
+                            },
+                            "MTPI_APPL_ID" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_COMPANY_CODE" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_PROCESS_DATE" : {
+                              "type" : "string",
+                              "maxLength" : 10
+                            },
+                            "MTPI_EDIT_LANG" : {
+                              "type" : "string",
+                              "maxLength" : 1
+                            }
+                          }
+                        },
+                        "MIR_SCREEN_1" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MIR_SCREEN_1_FIELDS" : {
+                              "type" : "object",
+                              "properties" : {
+                                "MIR_TRNID" : {
+                                  "type" : "string",
+                                  "maxLength" : 4
+                                },
+                                "MIR_CMD" : {
+                                  "type" : "string",
+                                  "maxLength" : 64
+                                },
+                                "MIR_POLNO" : {
+                                  "type" : "string",
+                                  "maxLength" : 9
+                                },
+                                "MIR_POLSF" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_MENAE" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_ISLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_CRLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_AGENT" : {
+                                  "type" : "string",
+                                  "maxLength" : 6
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "APANCOMM" ]
+        }
+      }
+    },
+    "deleteIIT_CLAS_SRV_V1_AplicationEntry_request" : {
+      "type" : "object",
+      "properties" : {
+        "IIT_CLAS_SRV_V1_AplicationEntryOperation" : {
+          "type" : "object",
+          "properties" : {
+            "APANCOMM" : {
+              "type" : "object",
+              "properties" : {
+                "NCWM0300" : {
+                  "type" : "object",
+                  "properties" : {
+                    "MIR_MAP_INTERFACE" : {
+                      "type" : "object",
+                      "properties" : {
+                        "MIR_LENGTH" : {
+                          "type" : "integer",
+                          "minimum" : -9999,
+                          "maximum" : 9999
+                        },
+                        "MTPI_PARMS" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MTPI_CURSOR_POS" : {
+                              "type" : "integer",
+                              "minimum" : -9999,
+                              "maximum" : 9999
+                            },
+                            "MTPI_PROGRAM_ID" : {
+                              "type" : "string",
+                              "maxLength" : 8
+                            },
+                            "MTPI_APPL_ID" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_COMPANY_CODE" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_PROCESS_DATE" : {
+                              "type" : "string",
+                              "maxLength" : 10
+                            },
+                            "MTPI_EDIT_LANG" : {
+                              "type" : "string",
+                              "maxLength" : 1
+                            }
+                          }
+                        },
+                        "MIR_SCREEN_1" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MIR_SCREEN_1_FIELDS" : {
+                              "type" : "object",
+                              "properties" : {
+                                "MIR_TRNID" : {
+                                  "type" : "string",
+                                  "maxLength" : 4
+                                },
+                                "MIR_CMD" : {
+                                  "type" : "string",
+                                  "maxLength" : 64
+                                },
+                                "MIR_POLNO" : {
+                                  "type" : "string",
+                                  "maxLength" : 9
+                                },
+                                "MIR_POLSF" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_MENAE" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_ISLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_CRLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_AGENT" : {
+                                  "type" : "string",
+                                  "maxLength" : 6
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "APANCOMM" ]
+        }
+      }
+    },
+    "deleteIIT_CLAS_SRV_V1_AplicationEntry_response_200" : {
+      "type" : "object",
+      "properties" : {
+        "IIT_CLAS_SRV_V1_AplicationEntryOperationResponse" : {
+          "type" : "object",
+          "properties" : {
+            "APANCOMM" : {
+              "type" : "object",
+              "properties" : {
+                "NCWM0300" : {
+                  "type" : "object",
+                  "properties" : {
+                    "MIR_MAP_INTERFACE" : {
+                      "type" : "object",
+                      "properties" : {
+                        "MIR_LENGTH" : {
+                          "type" : "integer",
+                          "minimum" : -9999,
+                          "maximum" : 9999
+                        },
+                        "MTPI_PARMS" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MTPI_CURSOR_POS" : {
+                              "type" : "integer",
+                              "minimum" : -9999,
+                              "maximum" : 9999
+                            },
+                            "MTPI_PROGRAM_ID" : {
+                              "type" : "string",
+                              "maxLength" : 8
+                            },
+                            "MTPI_APPL_ID" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_COMPANY_CODE" : {
+                              "type" : "string",
+                              "maxLength" : 2
+                            },
+                            "MTPI_PROCESS_DATE" : {
+                              "type" : "string",
+                              "maxLength" : 10
+                            },
+                            "MTPI_EDIT_LANG" : {
+                              "type" : "string",
+                              "maxLength" : 1
+                            }
+                          }
+                        },
+                        "MIR_SCREEN_1" : {
+                          "type" : "object",
+                          "properties" : {
+                            "MIR_SCREEN_1_FIELDS" : {
+                              "type" : "object",
+                              "properties" : {
+                                "MIR_TRNID" : {
+                                  "type" : "string",
+                                  "maxLength" : 4
+                                },
+                                "MIR_CMD" : {
+                                  "type" : "string",
+                                  "maxLength" : 64
+                                },
+                                "MIR_POLNO" : {
+                                  "type" : "string",
+                                  "maxLength" : 9
+                                },
+                                "MIR_POLSF" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_MENAE" : {
+                                  "type" : "string",
+                                  "maxLength" : 1
+                                },
+                                "MIR_ISLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_CRLOC" : {
+                                  "type" : "string",
+                                  "maxLength" : 2
+                                },
+                                "MIR_AGENT" : {
+                                  "type" : "string",
+                                  "maxLength" : 6
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required" : [ "APANCOMM" ]
+        }
+      }
+    }
+  }
+}
